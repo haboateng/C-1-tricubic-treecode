@@ -1,7 +1,8 @@
 # C-1-tricubic-treecode
 A tricubic treecode method with global C^1 continuity
 !
-!!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#!!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
   Authors:
 
   	Henry A. Boateng  (boateng@sfsu.edu) 
@@ -19,7 +20,7 @@ A tricubic treecode method with global C^1 continuity
   and U.S. Department of Energy, Office of Science, Office of Work- force 
   Development for Teachers and Scientists (WDTS) under the Visiting Faculty Program.
   
-!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
    NOTE: Please include the following references in any work that
@@ -43,8 +44,8 @@ Summary of files :
                         
                       
 
-!!!!!!!
-! .cpp and .h FILES 
+#!!!!!!!
+#! .cpp and .h FILES 
       direct_sum.cpp : C++ file for exact computation of the potential and field exactly. 
       
       Tricubic.cpp   : Main C++ program for the tricubic treecode.
@@ -66,11 +67,11 @@ Input for direct_sum and Tricubic :
       input_params.txt specifies the following required options in
       the given order:
       
-// Treecode method to be used: Particle-Cluster, Cluster-Particle
+#// Treecode method to be used: Particle-Cluster, Cluster-Particle
 
-	Particle-Cluster    // (This option picks particle-cluster)
+	Particle-Cluster    #// (This option picks particle-cluster)
  
-// Kernel name below: Coulomb, ScreenedCoulomb, RSEwaldSum
+#// Kernel name below: Coulomb, ScreenedCoulomb, RSEwaldSum
 
 	RSEwaldSum // (This option picks the  real space Ewald Sum kernel)
  
