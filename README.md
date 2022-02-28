@@ -1,7 +1,7 @@
 # C-1-tricubic-treecode
 A tricubic treecode method with global C^1 continuity
 !
-#!!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   Authors:
 
@@ -20,7 +20,7 @@ A tricubic treecode method with global C^1 continuity
   and U.S. Department of Energy, Office of Science, Office of Work- force 
   Development for Teachers and Scientists (WDTS) under the Visiting Faculty Program.
   
-#!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
    NOTE: Please include the following references in any work that
@@ -44,8 +44,8 @@ Summary of files :
                         
                       
 
-#!!!!!!!
-#! .cpp and .h FILES 
+!!!!!!!
+! .cpp and .h FILES 
       direct_sum.cpp : C++ file for exact computation of the potential and field exactly. 
       
       Tricubic.cpp   : Main C++ program for the tricubic treecode.
@@ -124,8 +124,7 @@ Running Tricubic generates two files : output.txt and tricubic_sum_kernalName_LM
 
 The file output.txt has the following entries:
 
-Number of particles (N_cube), Maximum number of particles in a leaf (N0), MAC (theta), relative 2-norm error in potential (E), relative 2-norm error in field (FE),
-relative 1-norm error in potential (eL1), relative 1-norm error in field, time for direct sum in centiseconds, treecode time in centiseconds
+	Number of particles (N_cube), Maximum number of particles in a leaf (N0), MAC (theta), relative 2-norm error in potential (E), relative 2-norm error in field (FE), relative 1-norm error in potential (eL1), relative 1-norm error in field, time for direct sum in centiseconds, treecode time in centiseconds
 
 For the file tricubic_sum_kernalName_LM_Nnumberofparticles:
     The first line has the data:
