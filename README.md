@@ -2,23 +2,23 @@
 A tricubic treecode method with global C^1 continuity
 !
 !!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-!   Authors:
-!
-!   Henry A. Boateng  (boateng@sfsu.edu) 
-!   Department of Mathematics
-!   San Francisco State University
-!   San Francisco, CA
-!
-!   Svetlana Tlupova (tlupovs@farmingdale.edu)
-!   Department of Mathematics
-!   Farmingdale State College, SUNY
-!   Farmingdale, NY
-!
-!   This material is based upon work partially supported by the 
-!   National Science Foundation under Grant Nos. CHE-1800181 and DMS-2012371
-!   and U.S. Department of Energy, Office of Science, Office of Work- force 
-!   Development for Teachers and Scientists (WDTS) under the Visiting Faculty Program.
-!   
+  Authors:
+
+  Henry A. Boateng  (boateng@sfsu.edu) 
+  Department of Mathematics
+  San Francisco State University
+  San Francisco, CA
+     
+  Svetlana Tlupova (tlupovs@farmingdale.edu)
+  Department of Mathematics
+  Farmingdale State College, SUNY
+  Farmingdale, NY
+  
+  This material is based upon work partially supported by the 
+  National Science Foundation under Grant Nos. CHE-1800181 and DMS-2012371
+  and U.S. Department of Energy, Office of Science, Office of Work- force 
+  Development for Teachers and Scientists (WDTS) under the Visiting Faculty Program.
+  
 !%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -67,30 +67,39 @@ Input for direct_sum and Tricubic :
       the given order:
       
 // Treecode method to be used: Particle-Cluster, Cluster-Particle
+
 Particle-Cluster    // (This option picks particle-cluster)
  
 // Kernel name below: Coulomb, ScreenedCoulomb, RSEwaldSum
+
 RSEwaldSum // (This option picks the  real space Ewald Sum kernel)
  
 // number of particles
+
 10000            
  
 // N0, leaf size 
-2000     
+
+2000     // Pick N0 = 2000
  
 // parameter to choose the type of MAC (0 - Regular MAC, 1 - Spherical MAC)
-0
+
+0   // Use Regular MAC
  
 // theta, MAC parameter (Should be less than 1 for Regular MAC, ideally greater than 1 for Spherical MAC)
-0.5
+
+0.5  //theta = 0.5
  
 // 1 if finite differences should be used, 0 otherwise
-0
+
+0  // Use analytical derivatives
  
 // mgrid, any value when finite differences are not used. Do not delete.
+
 20
  
 // hgrid, any value when finite differences are not used. Do not delete.
+
 0.01
 
 Output for the executable direct_sum :
