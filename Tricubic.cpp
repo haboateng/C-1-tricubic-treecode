@@ -161,7 +161,6 @@ void Compute_CP1(struct xyz &particles,
         tree[panel_index].moment_flag = 1;
         Compute_Coeff_LM(p_x, p_y, p_z, panel_index, kernel);
 
-        maxCradius = (tree[panel_index].radius > maxCradius) ? tree[panel_index].radius : maxCradius;
       }
     
     else
@@ -184,7 +183,7 @@ void Compute_CP1(struct xyz &particles,
 
 //*****************************************************************************//
 
-vec_4d Compute_Velocity(double *lambda,
+vec_4d Compute_Potential(double *lambda,
 			struct xyz &particles,
 			double p_x, double p_y, double p_z,
 			size_t panel_index,
@@ -199,21 +198,20 @@ vec_4d Compute_Velocity(double *lambda,
 	
     double R_sq = tpx * tpx + tpy * tpy + tpz * tpz;
     
-    vec_4d velocity;
-    velocity.val[0] = 0.0; velocity.val[1] = 0.0;
-    velocity.val[2] = 0.0; velocity.val[3] = 0.0;
+    vec_4d potential;
+    potential.val[0] = 0.0; potential.val[1] = 0.0;
+    potential.val[2] = 0.0; potential.val[3] = 0.0;
 	
     if (tree[panel_index].MAC < R_sq)
       {
         vec_4d tree_result = Call_Tricubic_LM(p_x, p_y, p_z,
 					      panel_index,
 					      kernel);
-        velocity.val[0] += tree_result.val[0];
-        velocity.val[1] += tree_result.val[1]*tree[panel_index].rxl;
-        velocity.val[2] += tree_result.val[2]*tree[panel_index].ryl;
-        velocity.val[3] += tree_result.val[3]*tree[panel_index].rzl;
+        potential.val[0] += tree_result.val[0];
+        potential.val[1] += tree_result.val[1]*tree[panel_index].rxl;
+        potential.val[2] += tree_result.val[2]*tree[panel_index].ryl;
+        potential.val[3] += tree_result.val[3]*tree[panel_index].rzl;
 
-        maxCradius = (tree[panel_index].radius > maxCradius) ? tree[panel_index].radius : maxCradius;
       }
     
     else
@@ -226,35 +224,35 @@ vec_4d Compute_Velocity(double *lambda,
 				       lambda,
 				       kernel);
 	    
-            velocity.val[0] += DS_result.val[0];
-            velocity.val[1] += DS_result.val[1];
-            velocity.val[2] += DS_result.val[2];
-            velocity.val[3] += DS_result.val[3];
+            potential.val[0] += DS_result.val[0];
+            potential.val[1] += DS_result.val[1];
+            potential.val[2] += DS_result.val[2];
+            potential.val[3] += DS_result.val[3];
             
 	  }
 	else //if cluster is not a leaf, look at children
 	  {
-	    velocity.val[0] = 0.0; velocity.val[1] = 0.0;
-            velocity.val[2] = 0.0; velocity.val[3] = 0.0;
+	    potential.val[0] = 0.0; potential.val[1] = 0.0;
+            potential.val[2] = 0.0; potential.val[3] = 0.0;
  
 	    size_t length = tree[panel_index].children.size();
 	    for (size_t i = 0; i < length; i++)
 	      {
 		size_t index = tree[panel_index].children[i];
-                vec_4d temp_result = Compute_Velocity(lambda,
+                vec_4d temp_result = Compute_Potential(lambda,
 						      particles,
 						      p_x,  p_y, p_z,
 						      index,
 						      kernel);
-                velocity.val[0] += temp_result.val[0];
-                velocity.val[1] += temp_result.val[1];
-                velocity.val[2] += temp_result.val[2];
-                velocity.val[3] += temp_result.val[3];
+                potential.val[0] += temp_result.val[0];
+                potential.val[1] += temp_result.val[1];
+                potential.val[2] += temp_result.val[2];
+                potential.val[3] += temp_result.val[3];
 
 	      }            
 	  }
       }
-    return velocity;
+    return potential;
 }
 
 //*****************************************************************************//
@@ -454,7 +452,7 @@ int main()
 	   double temp_x = particles.x[i];
 	   particles.x[i] += 1000.0;
 	
-	   vec_4d vdv = Compute_Velocity(lambda,
+	   vec_4d vdv = Compute_Potential(lambda,
 	 			         particles,
 				         p_x, p_y, p_z,
 				         0,
@@ -630,7 +628,7 @@ int main()
            }
     }
 
-    cout << "L2 velocity Error = " << E << endl;
+    cout << "L2 potential Error = " << E << endl;
     cout << "Numerator of L2 error = " << e_n << endl;
     cout << "Denominator of L2 error (uses exact value) = " << e_d_ex << endl;
     cout << " " << endl;
