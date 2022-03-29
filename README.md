@@ -27,9 +27,9 @@ A tricubic treecode method with global C^1 continuity
    NOTE: Please include the following references in any work that
          utilizes this code:
 		 
-        (1) Boateng. H. A., Tlupova, S.: A Treecode Method With Global C-1
-            Continuity
-            Journal Here, submitted, (2022)  
+        (1) Boateng. H. A., Tlupova, S.: A treecode algorithm based on 
+            tricubic interpolation with global $\mathbb{C}^1$ continuity
+            Communications in Computer Physics, submitted, (2022)  
 		 
 
 Summary of files :
