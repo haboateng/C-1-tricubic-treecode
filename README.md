@@ -47,7 +47,7 @@ Summary of files :
 
 !!!!!!!
 ! .cpp and .h FILES 
-      direct_sum.cpp : C++ file for exact computation of the potential and field exactly. 
+      direct_sum.cpp : C++ file for exact computation of the potential and field. 
       
       Tricubic.cpp   : Main C++ program for the tricubic treecode.
       
