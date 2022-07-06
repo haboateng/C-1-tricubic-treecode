@@ -28,8 +28,8 @@ A tricubic treecode method with global C^1 continuity
          utilizes this code:
 		 
         (1) Boateng. H. A., Tlupova, S.: A treecode algorithm based on 
-            tricubic interpolation with global $\mathbb{C}^1$ continuity
-            Journal of Mathematics and Computing, submitted, (2022)  
+            tricubic interpolation
+            Communications in Computational Physics, submitted, (2022)  
 		 
 
 Summary of files :
